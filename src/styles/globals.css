@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+* {
+	--accent: #85b5cd;
+	--bg: #fcfcfc;
+	--text: rgb(30, 33, 36);
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	padding: 1rem;
+	background-image: url("https://images.unsplash.com/photo-1596865249308-2472dc5807d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;
+	position: fixed;
+	color: var(--bg);
+	top: 0;
+	width: 100%;
+	background-position: 0;
+	font-size: 1.2rem;
+}
+
+header div {
+	display: flex;
+	align-items: center;
+}
+
+#container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.sidebar {
+	width: 300px;
+	height: 100%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	padding: .25em;
+	gap: .5em;
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-image: url("https://images.unsplash.com/photo-1596865249308-2472dc5807d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80");
+	position: sticky; 
+}
+
+.closed {
+ display:none;
+}
+
+.sidebar button {
+	background: var(--accent);
+	border: none;
+	padding: .5rem;
+	min-width: 100px;
+	justify-self: center;
+	align-self: center;
+	color: var(--text);
+	width: max-content;
+	border-radius: 2px;
+}
+
+form {
+	background: linear-gradient(to right, var(--accent), var(--text));
+	border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0,0,0,.2);
+	padding: .15em;
+	display: flex;
+	top: .1em;
+	position: sticky;
+}
+
+label {
+	position: fixed;
+	left: -10000px;
+}
+
+form div {
+	width: max-content;
+	display: flex;
+	align-items: center;
+}
+
+form div:first-child {
+	order: 1;
+}
+
+form div:last-child {
+	flex-grow: 1;
+	padding: 0 .5em;
+}
+
+input {
+	background: transparent;
+	border: none;
+	padding: .5em;
+	width: 100%;
+	caret-color: var(--text);
+	outline: none;
+	color: var(--text);
+}
+
+input::placeholder {
+	color: var(--text);
+}
+
+input * {
+	background: transparent;
+}
+
+select {
+	padding: .25em;
+	border-radius: 2px;
+	background: var(--bg);
+	color: var(--text);
+	border: none;
+	outline: none;
+	height: 100%;
+}
+
+form div svg {
+	height: 1.3rem;
+	width: 1.3rem;
+}
+
+.autocomplete {
+	width: 100%;
+}
+
+.ac-results {
+	position: absolute;
+	background: var(--bg);
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	gap: .25em;
+}
+
+.ac-results button {
+	background: transparent;
+	width: 100%;
+	white-space: nowrap;
+	color: var(--text);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: none;
+	padding: .5em;
+}
+
+.ac-results button:hover {
+	background: rgba(0,0,0,.1);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	width: 100%;
+	color: var(--bg);
+	background: rgba(0,0,0,.5);
+	padding: .15em .5em;
+	border-radius: 2px;
+	border: 3px solid transparent;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.card:hover, .card:focus-within {
+	background: rgba(255,255,255,.9);
+	color: black;
+	transition: all .1s ease-in;
+}
+
+.name {
+	width: 100%;
+}
+
+.name a {
+	display: flex;
+	align-items: center;
+}
+
+svg {
+	margin-right: .25em;
+	width: 1em;
+	height: 1em;
+}
+
+.middle {
+	display: flex;
+}
+
+.middle span {
+	display: block;
+	font-size: .9em;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer button {
+	color: var(--accent);
+	text-decoration: underline;
+	border:none;
+	padding: 0;
+	background: transparent;
+}
+
+.footer span {
+	display: flex;
+	width: max-content;
+	justify-content: center;
+	align-items: center;
+	font-size: .9em;
+}
+
+#google-map {
+	flex-grow: 1;
+	height: 100%;
+}
+
+.map {
+	height: 100%;
+}
+
+.none {
+	color: white;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+
+	body {
+		color: var(--text);
+		background: var(--bg);
+	}
+}
+
+
+@media screen and (max-width: 481px) {
+	.sidebar {
+		order: 2;
+		width: 100%;
+	}
+}
